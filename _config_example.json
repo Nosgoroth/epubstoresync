@@ -1,0 +1,13 @@
+{
+    "USE_PUSHOVER": true,
+    "PUSHOVER_API": "https://api.pushover.net/1/",
+    "PUSHOVER_TOKEN": "123123123123123123",
+    "PUSHOVER_USER": "qweqweqweqweqweqweqweqwe",
+
+    "KINDLE_MAX_FSIZE": 26214400,
+    "USE_SEND_TO_KINDLE": false,
+    "SEND_TO_KINDLE_COMMAND": ["ape", "D:\\Dropbox\\reading\\wepub\\sendtokindle.py"],
+    "KOBODL_COMMAND": ["D:\\System\\Python38\\Scripts\\kobodl.exe",
+                       "--config", "C:\\Users\\Nosgoroth\\.config\\kobodl.json"],
+    "KOBO_OUTPUT_DIR": "D:\\Dropbox\\reading\\_epub\\Kobo"
+}
