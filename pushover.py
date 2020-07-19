@@ -2,6 +2,7 @@ import urllib, json
 import urllib.parse
 import urllib.request
 import os
+import requests
 
 from configloader import getconfig
 config = getconfig()
@@ -36,6 +37,6 @@ def pushover(message, token=config["PUSHOVER_TOKEN"], user=config["PUSHOVER_USER
 	except PushoverError:
 		print("Rejected by Pushover")
 		return False
-	except:
-		print("Pushover error ocurred")
+	except Exception as e:
+		print("Pushover error ocurred: %s" % str(e))
 		return False

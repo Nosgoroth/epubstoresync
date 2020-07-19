@@ -4,10 +4,18 @@
     "PUSHOVER_TOKEN": "123123123123123123",
     "PUSHOVER_USER": "qweqweqweqweqweqweqweqwe",
 
+    "USE_SEND_TO_KINDLE": true,
     "KINDLE_MAX_FSIZE": 26214400,
-    "USE_SEND_TO_KINDLE": false,
     "SEND_TO_KINDLE_COMMAND": ["ape", "D:\\Dropbox\\reading\\wepub\\sendtokindle.py"],
+
+    "USE_KOBO": true,
     "KOBODL_COMMAND": ["D:\\System\\Python38\\Scripts\\kobodl.exe",
                        "--config", "C:\\Users\\Nosgoroth\\.config\\kobodl.json"],
-    "KOBO_OUTPUT_DIR": "D:\\Dropbox\\reading\\_epub\\Kobo"
+    "KOBO_OUTPUT_DIR": "D:\\Dropbox\\reading\\_epub\\Kobo",
+
+    "USE_JNC": true,
+    "JNC_API_ENDPOINT": "https://api.j-novel.club/api",
+    "JNC_OUTPUT_DIR": "D:\\Dropbox\\reading\\_epub\\JNC",
+    "JNC_EMAIL": "username@example.com",
+    "JNC_PASSWORD": "0987654321"
 }
