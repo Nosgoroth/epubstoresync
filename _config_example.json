@@ -7,6 +7,7 @@
     "USE_SEND_TO_KINDLE": true,
     "KINDLE_MAX_FSIZE": 26214400,
     "SEND_TO_KINDLE_COMMAND": ["ape", "D:\\Dropbox\\reading\\wepub\\sendtokindle.py"],
+    "SEND_TO_KINDLE_LOGFILE": "C:\\sendtokindle.log",
 
     "USE_KOBO": true,
     "KOBODL_COMMAND": ["D:\\System\\Python38\\Scripts\\kobodl.exe",
