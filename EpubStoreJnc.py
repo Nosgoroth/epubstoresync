@@ -152,7 +152,7 @@ def process():
             r.raise_for_status()
             with open(fullfn, 'wb') as file:
                 file.write(r.content)
-            print("Downloaded %s", book['title'])
+            print("Downloaded %s" % book['title'])
             process_new_file(fullfn, "JNC")
         except Exception as e:
             if os.path.exists(fullfn):
