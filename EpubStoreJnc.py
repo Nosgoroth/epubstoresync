@@ -1,4 +1,4 @@
-import os, sys, json, re
+import os, sys, json, re, glob
 import requests
 import datetime
 from common import process_new_file
@@ -128,11 +128,18 @@ def getNewBooksAvailableToDownload():
 
 
 def process():
+    before_files = glob.glob(os.path.join(config["JNC_OUTPUT_DIR"], "*.epub"))
+    print("Books already downloaded: %d" % (len(before_files)))
+    del before_files
+    print("Retrieving books...")
     books = getNewBooksAvailableToDownload()
     if len(books) == 0:
         print("No new books available")
         return
     
+    print("New books: %d" % (len(books)))
+    print()
+
     for book in books:
 
         fn = "%s.epub" % titleToFilename(book['title'])
@@ -147,17 +154,20 @@ def process():
         #continue
 
         try:
-            print("Found new book %s" % book['title'])
+            print("Found new book: %s" % book['title'])
+            print("Downloading...")
             r = requests.get(url, allow_redirects=True)
             r.raise_for_status()
             with open(fullfn, 'wb') as file:
                 file.write(r.content)
-            print("Downloaded %s" % book['title'])
+            print("Downloaded")
             process_new_file(fullfn, "JNC")
         except Exception as e:
             if os.path.exists(fullfn):
                 os.unlink(fullfn)
             print("An error ocurred: %s" % str(e))
+
+        print()
 
 
 if __name__ == "__main__":
